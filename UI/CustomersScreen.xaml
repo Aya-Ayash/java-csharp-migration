@@ -1,0 +1,39 @@
+<UserControl x:Class="aim.legacy.UI.CustomersScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel>
+        <!-- Top: Search panel -->
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Search:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBox x:Name="SearchField" Width="200" Margin="0,0,10,0"/>
+            <Button Content="Search" Width="80" Margin="0,0,10,0" Click="SearchButton_Click"/>
+            <Button Content="Show All" Width="80" Click="ClearButton_Click"/>
+        </StackPanel>
+
+        <!-- Bottom: Button panel -->
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="10">
+            <Button Content="Add Customer" Width="120" Margin="0,0,10,0" Click="AddButton_Click"/>
+            <Button Content="Edit Customer" Width="120" Margin="0,0,10,0" Click="EditButton_Click"/>
+            <Button Content="Delete Customer" Width="120" Click="DeleteButton_Click"/>
+        </StackPanel>
+
+        <!-- Center: Customer table -->
+        <DataGrid x:Name="CustomerTable"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectionUnit="FullRow"
+                  Margin="10"
+                  GridLinesVisibility="Horizontal"
+                  HeadersVisibility="Column">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding CustId}" Width="60"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding CustName}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="*"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="*"/>
+                <DataGridTextColumn Header="Customer Type" Binding="{Binding CustomerType}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

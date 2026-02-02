@@ -1,0 +1,25 @@
+<Window x:Class="aim.legacy.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Order Entry System"
+        Width="900"
+        Height="600"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <!-- Optional: shared styles can go here or in a separate ResourceDictionary -->
+    </Window.Resources>
+    <DockPanel>
+        <!-- Menu bar -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Navigation">
+                <MenuItem Header="Customers" Click="CustomersItem_Click"/>
+                <MenuItem Header="Orders" Click="OrdersItem_Click"/>
+                <Separator/>
+                <MenuItem Header="Exit" Click="ExitItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <!-- Main content area - CardLayout equivalent: switches between screens -->
+        <ContentControl x:Name="MainContent" />
+    </DockPanel>
+</Window>
